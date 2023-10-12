@@ -1,0 +1,117 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$initial-header-height : 7.5em;
+$scrolling-header-height : 5.5em;
+
+$menu-active-background : #D36943;
+$menu-active-color : #fff;
+
+* {
+  box-sizing:border-box;
+}
+
+body{
+  background:whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  color: #353737;
+  padding: 8em 0 5em 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 40em;
+  min-width:12em;
+  padding: 0 1.25em;
+  margin: 0 auto;
+}
+
+.header .container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  color:#949494;
+  width: 100%;
+  height: $initial-header-height;
+  text-align: center;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  @include transition-timing-function( cubic-bezier( 0.215, 0.610, 0.355, 1.000 ) );
+  @include transition-duration(.7s);
+  @include transition-property(height, top);
+  @include box-shadow(rgba(30,50,50,.25) 0 0.05em 0.5em);
+  &.scrolling{
+    height: $scrolling-header-height;  
+  }
+  &.hide{
+    top:-$scrolling-header-height;   
+  }
+}
+
+.header nav {
+  height: 100%;
+  display: table;
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+  li {
+    float: left;
+    display: inline-block;
+    overflow:hidden;
+    position:relative;
+    margin-left:.625em;
+    a {
+      @include transition-duration(.3s);
+      @include transition-delay(0s);
+      @include transition-property(color, background);
+      height: $initial-header-height / 3;
+      line-height: $initial-header-height / 3;
+      display: block;
+      padding: 0 0.625em;
+      color:inherit;
+      text-decoration: none;
+      z-index:1;
+    }
+    &:before {
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        z-index:-1;
+        @include transition-duration(.5s);
+        @include transition-property(transform);
+        @include transform(translateY(200%));
+      }
+    &:hover:before{
+      background-color: lighten($menu-active-background, 30);
+      @include transform(translateY(0%));
+    }
+    &.active:before{
+      background-color: $menu-active-background;
+      @include transform(translateY(0%));
+    }
+    
+    &.active a {
+      font-weight:bold;
+    }
+    
+    &:hover a,
+    &.active a {
+      @include transition-delay(.1s);
+      color: $menu-active-color;
+    }
+  }
+}

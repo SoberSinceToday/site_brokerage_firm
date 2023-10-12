@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <meta charset="UTF-8">
+  <title>ClickFi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="burger-menu">
+  <div class="burger-icon">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <ul class="burger-nav">
+    <li><a href="#">О нас</a></li>
+    <li><a href="#Кейсы">Кейсы</a></li>
+    <li><a href="#Связь с нами">Связь с нами</a></li>
+    <li><a href="https://t.me/clickfiBot">Оставить заявку</a></li>
+  </ul>
+</div>
+
+<header class="header" role="banner">
+  <div class="container">
+    <img class="ebuchayanapdisnenaviju" src='./images/clickfi_3.png' alt=''>
+		<nav><ul>
+        <li class="active"><a href="#">О нас</a></li>
+        <li><a href="#Кейсы">Кейсы</a></li>
+        <li><a href="#КредКалк">Кредитный калькулятор</a></li>
+        <li class = "big_butt"><a href="https://t.me/clickfiBot">Оставить заявку</a></li>
+      </ul></nav>
+
+  </div>
+</header>
+
+
+
+<div class="content container" role="main">
+  <div class = "nadpisKalk">
+    <div class="nadpis">
+    <h1 id="О нас">Мы - компания ClickFinance</h1>
+          
+    <p><strong>Мы занимается кредитным брокерством, </strong> помогаем получать нашим клиентам на ссуммы, превышающие в несколько раз те, которые получают люди без нашей помощи</p>
+    <p>За нашими плечами огромное количество довольных клиентов и, соответственно, выполненных заказов</p>
+    <p><strong>Мы поддерживаем круглосуточную связь с клиентами благодаря обширному колл-центру</strong></p>
+        <!-- Калькулятор епта -->
+    </div>
+    <div id="КредКалк" class="calc_wrap">
+      <div class="calc_cont">
+        <div class="header_calc">
+          <h1 style="color: #6e6e6e">Кредитный калькулятор</h1>
+          <button>
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+        <div class="sub-container">
+          <div class="view">
+            <div class="details">
+              <div>
+                <div class="detail">
+                  <p style="color: #6e6e6e">Сумма</p>
+                  <p id="loan-amt-text" style="color: #6e6e6e"></p>
+                </div>
+                <input type="range" id="loan-amount" min="0" max="10000000" step="50000">
+              </div>
+              <div>
+                <div class="detail">
+                  <p style="color: #6e6e6e">Срок</p>
+                  <p id="loan-period-text" style="color: #6e6e6e"></p>
+                </div>
+                <input type="range" id="loan-period" min="1" max="30" step="1">
+              </div>
+              <div>
+                <div class="detail">
+                  <p style="color: #6e6e6e">Процентная ставка</p>
+                  <p id="interest-rate-text" style="color: #6e6e6e"></p>
+                </div>
+                <input type="range" id="interest-rate" min="1" max="15" step="0.5">
+              </div>
+            </div>
+            <div class="footer">
+              <p id="price-container"><span id="price">0</span>/мес</p>
+            </div>
+          </div>
+          <div class="breakup">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="loan-details">
+            <div class='chart-details'>
+              <p style="color: #6e6e6e">Сумма</p>
+              <p id="cp" style="color: #130F31; font-size: 17px;"></p>
+            </div>
+            <div class='chart-details'>
+              <p style="color: #6e6e6e">Проценты</p>
+              <p id="ci" style="color: #130F31; font-size: 17px;"></p>
+            </div>
+            <div class='chart-details'>
+              <p style="color: #6e6e6e">Общая выплата</p>
+              <p id="ct" style="color: #130F31; font-size: 17px;"></p>
+            </div>
+          </div>
+          <canvas id="lineChart" height="200px" width="200px"></canvas>
+        </div>
+      </div>
+    </div>
+    </div>
+<!-- Конец калькулятора епта -->
+  </div>
+  <div class ="wrap_1">
+  <div class="wrap_2">
+  <div class="KratkoONas">
+  <h1 id="Кейсы">Кратко о нас</h1>
+  </div>
+  <input type="radio" id="s-1" name="slider-control" checked="checked">
+  <input type="radio" id="s-2" name="slider-control">
+  <input type="radio" id="s-3" name="slider-control">
+  <div class="js-slider">
+    <div class="slider-container">
+    <figure class="js-slider_item img-1">
+      <div class="js-slider_img">
+        <img class="c-img-w-full" src="./images/1.jpg" alt="">
+      </div>
+      <figcaption class="wo-caption">
+        <h3 class="wo-h3">
+          <div class="c-label">ClickFi</div>
+          <br class="view-sm mb-s">Всегда на вашей стороне!</h3>
+        <ul class="wo-credit">
+          <li>Более 30 довольных клиентов</li>
+          <li>Менее чем за год работы</li>
+          <li>Рассмотрим даже самые сложные дела</li>
+        </ul>
+      </figcaption>
+    </figure>
+    <figure class="js-slider_item img-2">
+      <div class="js-slider_img">
+        <img class="c-img-w-full" src="./images/2.jpg" alt=""></div>
+      <figcaption class="wo-caption">
+        <h3 class="wo-h3">
+          <div class="c-label">ClickFi</div>  
+          <br class="view-sm mb-s">Всегда на вашей стороне!</h3>
+        <ul class="wo-credit">
+          <li>Взаимовыгодное сотрудничество</li>
+          <li>Получение средств под любые цели</li>
+          <li>Поддержка связи на протяжении всего сотрудничества</li>
+      </figcaption>
+    </figure>
+    <figure class="js-slider_item img-3">
+      <div class="js-slider_img">
+        <img class="c-img-w-full" src="./images/3.jpg" alt=""></div>
+      <figcaption class="wo-caption">
+        <h3 class="wo-h3">
+          <div class="c-label">ClickFi</div>  
+          <br class="view-sm mb-s">Всегда на вашей стороне!</h3>
+        <ul class="wo-credit">
+          <li>Быстрое рассмотрение заявок</li>
+          <li>Отзывчивая поддержка</li>
+          <li>Круглосуточный Call-центр</li>
+      </figcaption>
+    </figure>
+    <div class="js-slider_nav">
+      <label class="js-slider_nav_item s-nav-1 prev" for="s-3"></label>
+      <label class="js-slider_nav_item s-nav-1 next" for="s-2"></label>
+      <label class="js-slider_nav_item s-nav-2 prev" for="s-1"></label>
+      <label class="js-slider_nav_item s-nav-2 next" for="s-3"></label>
+      <label class="js-slider_nav_item s-nav-3 prev" for="s-2"></label>
+      <label class="js-slider_nav_item s-nav-3 next" for="s-1"></label>
+    </div>
+    <div class="js-slider_indicator">
+      <div class="js-slider-indi indi-1"></div>
+      <div class="js-slider-indi indi-2"></div>
+      <div class="js-slider-indi indi-3"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+    <!-- Site footer -->
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>О Компании</h6>
+            <p class="text-justify">ClickFi - это кредитный брокер, который помогает людям получить кредиты на выгодных условиях. Наша компания специализируется на предоставлении клиентам самой эффективной и удобной услуги по оформлению кредитов. Мы помогаем нашим клиентам разобраться в сложностях и нюансах кредитного процесса, чтобы они могли принять осознанное решение и получить максимально выгодные условия.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Категории</h6>
+            <ul class="footer-links">
+              <li><a href="#">Недвижимость</a></li>
+              <li><a href="#">Авто</a></li>
+              <li><a href="#">Бизнес</a></li>
+              <li><a href="#">Путешествие</a></li>
+              <li><a href="#">Техника</a></li>
+              <li><a href="#">Другое</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Прочие ссылки</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Contribute</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+         <a href="#">ClickFi</a>. Made by <a href="https://github.com/SoberSinceToday">SoberSinceToday</a> & <a href="https://github.com/SASHIKUBIVATOR">SASHIKUBIVATOR</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-telegram"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-vk"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </footer>
+  </div>
+    <div class="emargin"></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerIcon = document.querySelector(".burger-icon");
+  const burgerNav = document.querySelector(".burger-nav");
+
+  burgerIcon.addEventListener("click", function () {
+    burgerNav.classList.toggle("active");
+  });
+});
+    </script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js'></script><script  src="./script_calc.js"></script>
+</body>
+</html>
+<!--я въебал fonts, images, src в дист и поменял вхождения fonts и images в коде -->
