@@ -778,9 +778,115 @@ p{
   font-family: "Open Sans";
   font-size: large;
 }
+.nadpis{
+  display: flex;
+  justify-content: center;
+}
+.nadpis1{
+  display: flex;
+  justify-content: center;
+}
+.nadpis1mob{
+  display: none;
+}
+.strochkamob{
+  display: none;
+}
+.nadpismob{
+  display: none;
+}
+.tablichka{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.strochka h3{
+  padding-left: 1%;
+}
+.descr{
+  display: flex;
+  text-align: center;
+}
 
+.strochka{
+  display: flex;
+  justify-content: center;
+}
+.strochka img{
+  padding-top: 1.5%;
+}
+
+.strels1{
+    position: absolute;
+    top: 23%;
+}
+.strels2{
+  position: absolute;
+  top: 32%;
+}
+.strels3{
+  position: absolute;
+  top: 41%;
+}
 
 @media (max-width: 1000px) {
+  .strochkamob img{
+    width: 40%;
+    padding-top: 3%;
+    padding-right: 3%;
+  }
+  .descr{
+    display: none;
+  }
+  .nadpis1mob{
+    display: flex;
+    justify-content: center;
+  }
+  .nadpis1mob h1{
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .nadpismob{
+    display: flex;
+  justify-content: center;
+  padding-left: 8%;
+  position: relative;
+  }
+  .nadpismob h1{
+    font-size: 90px;
+    line-height: 90px;
+  }
+  .strochkamob{
+    display: flex;
+  justify-content: center;
+  }
+  .strochkamob h1{
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .nadpis1{
+    display: none;
+  }
+  .nadpis{
+    display: none;
+  }
+  .strochka{
+    display: none;
+  }
+  .mininadpis{
+    font-size: 54px;
+  }
+  .strochka h3{
+    padding-left: 1%;
+    padding: 0;
+    margin: 0;
+  }
+  .strochka img{
+    position:relative;
+    bottom:10px;
+    left:-10px;  
+  }
   .burger-icon {
     display: block;
   }
